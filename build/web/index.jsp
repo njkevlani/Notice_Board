@@ -13,9 +13,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/index.css"/>
         <title>Notice Board</title>
     </head>
     <body>
+        <h1 style="text-align:center">Notice Board</h1>
         <% 
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/notice_board","root","");
@@ -24,11 +26,12 @@
             ResultSet rs = st.executeQuery(sql);
         %>
         
-        <table border="1">            
+        <table class="table-fill">            
             <tr>
-            <th>Sr. num</th >
-            <th>Faculty</th>
-            <th>Date</th>
+                <!-- IDK Why this is not working, but let it be the way it is, ATM-->
+            <th style="width: 10px">Sr. num</th >
+            <th style="width: 40px">Faculty</th>
+            <th style="width: 10px">Date</th>
             <th style='width: 30px'>Notice</th>
             </tr>
             

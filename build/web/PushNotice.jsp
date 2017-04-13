@@ -4,6 +4,8 @@
     Author     : nilesh
 --%>
 
+<%@page import="java.time.ZoneId"%>
+<%@page import="java.time.LocalDate"%>
 <%@page import="java.util.Date"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.DriverManager"%>
@@ -23,8 +25,10 @@
             }
             else{
                 String faculty = (String)sess.getAttribute("tname"), 
-                       date = new Date().toString(),
+                       date = "",
                         notice = request.getParameter("notice");
+                LocalDate dt = new Date().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();;
+                date += dt.getDayOfMonth()+ "/" + dt.getMonthValue()+ "/" + dt.getYear();
                 
                 
                 Class.forName("com.mysql.jdbc.Driver");

@@ -56,9 +56,11 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <link rel=\"stylesheet\" href=\"css/index.css\"/>\n");
       out.write("        <title>Notice Board</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
+      out.write("        <h3 style=\"text-align:center\">Notice Board</h3>\n");
       out.write("        ");
  
             Class.forName("com.mysql.jdbc.Driver");
@@ -69,12 +71,12 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         
       out.write("\n");
       out.write("        \n");
-      out.write("        <table border=\"1\">            \n");
+      out.write("        <table class=\"table-fill\">            \n");
       out.write("            <tr>\n");
       out.write("            <th>Sr. num</th >\n");
       out.write("            <th>Faculty</th>\n");
       out.write("            <th>Date</th>\n");
-      out.write("            <th>Notice</th>\n");
+      out.write("            <th style='width: 30px'>Notice</th>\n");
       out.write("            </tr>\n");
       out.write("            \n");
       out.write("            ");
